@@ -13,16 +13,21 @@ class BookDetailsTest {
 
     @Test
     void collectiontest() {
-        Collection<BookDetails> BookDetailsCollection = new LinkedHashSet();
-        for (int x = 0; x < 5; x++) {
-            String title = "Java tutorial book Version1  " + 1;
-            String ISBN = "isbn6709" + 1;
-            BookDetails b = new BookDetails(title, ISBN);
-            System.out.println(title);
+        Collection<String> BookDetailsCollection = new LinkedHashSet();
 
-            BookDetailsCollection.add(b);
-        }
+        BookDetailsCollection.add("Entrepreneurship");
+        BookDetailsCollection.add("The 5AM gang");
+        assertEquals(2, BookDetailsCollection.size());
+        System.out.println(BookDetailsCollection);
+
     }
+
+    @Test
+    void CollectionRemove() {
+
+
+    }
+
 
     //MAP
     @Test
