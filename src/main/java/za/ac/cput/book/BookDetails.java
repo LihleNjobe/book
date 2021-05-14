@@ -15,14 +15,10 @@ public class BookDetails {
     private String ISBN;
     private int year;
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BookDetails that = (BookDetails) o;
-        return ISBN.equals(that.ISBN);
+    public BookDetails(String title) {
+        this.title = title;
     }
+
 
     @Override
     public int hashCode() {
@@ -38,8 +34,9 @@ public class BookDetails {
 
     }
 
-    public BookDetails(String title) {
+    public BookDetails(String title, String ISBN) {
         this.title = title;
+        this.ISBN = ISBN;
     }
 
     public void getTitle ()  {
@@ -79,6 +76,24 @@ public class BookDetails {
         this.year = year;
 
     }
+
+    @Override
+    public String toString() {
+        return "BookDetails{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", year=" + year +
+                '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookDetails that = (BookDetails) o;
+        return ISBN.equals(that.ISBN);
+    }
+
 }
 
 
