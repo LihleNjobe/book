@@ -144,8 +144,8 @@ class BookDetailsTest {
         BookDetailsSet.add(new BookDetails("Important notice", 44));
         BookDetailsSet.remove("Girls Talk");
 
-        assertEquals(1, BookDetailsSet.size());
-        System.out.println(BookDetailsSet);
+        assertEquals(2, BookDetailsSet.size());
+
 
     }
 
