@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BookDetailsTest {
 
 
-    // COLLECTIONS
+    // ****************************************COLLECTIONS**********************************************
 
     @Test
     public void collectionAdd() {
@@ -37,7 +37,7 @@ class BookDetailsTest {
     }
 
     @Test
-    void collectionFind() {
+    public void collectionFind() {
         Collection<String> BookDetailsCollection = new LinkedHashSet();
         BookDetailsCollection.add("Entrepreneurship");
         BookDetailsCollection.add("The 5AM gang");
@@ -48,7 +48,7 @@ class BookDetailsTest {
     }
 
 
-    //MAP
+    //**************************************MAP*********************************************************
     @Test
     public void mapAdd() {
         Map<Integer, String> BookDetailsMap = new HashMap<>();
@@ -73,7 +73,7 @@ class BookDetailsTest {
     }
 
     @Test
-    public void mapFind(){
+    public void mapFind() {
         Map<Integer, String> BookDetailsMap = new HashMap<>();
         BookDetailsMap.put(1, "Entrepreneurship");
         BookDetailsMap.put(2, "How to make a million");
@@ -81,31 +81,10 @@ class BookDetailsTest {
 
         BookDetailsMap.get(3);
         System.out.println(BookDetailsMap.get(3));
-  }
-
-
-    //SET
-    @Test
-    public void setAdd() {
-        Set<BookDetails> BookDetailsSet = new HashSet<>();
-        BookDetailsSet.add(new BookDetails("ABC", "ISBN78"));
-        BookDetailsSet.add(new BookDetails("How did I end up here ", "ISBN680"));
-        BookDetailsSet.add(new BookDetails("Secret life of Walter Mitty", "ISBN67"));
-
-        assertEquals(3, BookDetailsSet.size());
-        System.out.println(BookDetailsSet);
-
-    }
-
-    @Test
-    public void setRemove() {
-
-
     }
 
 
-
-    // LIST
+    // *************************************LIST*******************************************************
     @Test
     public void listAdd() {
         List<String> BookDetails = new ArrayList<>();
@@ -145,6 +124,43 @@ class BookDetailsTest {
         System.out.println(BookDetails.indexOf("Secrets"));
 
 
-        }
     }
+    //****************************************SET*****************************************************
+    @Test
+    public void setAdd() {
+
+        Set<BookDetails> BookDetailsSet = new HashSet<>();
+        BookDetailsSet.add(new BookDetails(" Secrets",12));
+        BookDetailsSet.add(new BookDetails(" How did I ended up here ", 23));
+        BookDetailsSet.add(new BookDetails(" Some Where ", 32 ));
+
+        System.out.println(BookDetailsSet);
+        assertEquals(3 ,BookDetailsSet.size());
+
+    }
+
+    @Test
+    public void setRemove() {
+        Set<BookDetails> BookDetailsSet = new HashSet<>();
+        BookDetailsSet.add(new BookDetails("Girls Talk", 45));
+        BookDetailsSet.add(new BookDetails("Important notice", 44));
+
+        BookDetailsSet.remove(45);
+        assertEquals(1, BookDetailsSet.size());
+        System.out.println(BookDetailsSet);
+
+    }
+
+    @Test
+    public void setfind() {
+        Set<BookDetails> BookDetailsSet = new HashSet();
+        BookDetailsSet.add(new BookDetails("Love Island", 12));
+        BookDetailsSet.add(new BookDetails("The House", 9));
+
+        BookDetailsSet.contains("The 5AM gang");
+        System.out.println(BookDetailsSet.contains("The 5AM gang"));
+
+    }
+
+}
 

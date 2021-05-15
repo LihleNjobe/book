@@ -9,24 +9,19 @@ import java.util.Objects;
  */
 public class BookDetails {
 
-
     private String title;
     private String author;
-    private String ISBN;
+    private int ISBN;
     private int year;
 
     public BookDetails(String title) {
-        this.title = title;
+
     }
 
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(ISBN);
+    public BookDetails(int ISBN) {
     }
 
-    public BookDetails(String title, String author, int year) {
+    public BookDetails(String title, String author, int year,int ISBN) {
 
         this.title = title;
         this.author = author;
@@ -35,7 +30,7 @@ public class BookDetails {
 
     }
 
-    public BookDetails(String title, String ISBN) {
+    public BookDetails(String title, int ISBN) {
         this.title = title;
         this.ISBN = ISBN;
     }
@@ -68,7 +63,7 @@ public class BookDetails {
         this.author = author;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(int ISBN) {
 
         this.ISBN = ISBN;
     }
@@ -86,15 +81,23 @@ public class BookDetails {
                 ", ISBN='" + ISBN + '\'' +
                 ", year=" + year +
                 '}';
+
+
     }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookDetails that = (BookDetails) o;
-        return ISBN.equals(that.ISBN);
+        return ISBN == that.ISBN;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(ISBN);
+    }
 }
 
 
