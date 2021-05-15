@@ -130,13 +130,11 @@ class BookDetailsTest {
     public void setAdd() {
 
         Set<BookDetails> BookDetailsSet = new HashSet<>();
-        BookDetailsSet.add(new BookDetails(" Secrets",12));
-        BookDetailsSet.add(new BookDetails(" How did I ended up here ", 23));
-        BookDetailsSet.add(new BookDetails(" Some Where ", 32 ));
+        BookDetailsSet.add(new BookDetails("Love Island", 234));
+        BookDetailsSet.add(new BookDetails("The fire house", 23));
 
+        assertEquals(2, BookDetailsSet.size());
         System.out.println(BookDetailsSet);
-        assertEquals(3 ,BookDetailsSet.size());
-
     }
 
     @Test
@@ -144,8 +142,8 @@ class BookDetailsTest {
         Set<BookDetails> BookDetailsSet = new HashSet<>();
         BookDetailsSet.add(new BookDetails("Girls Talk", 45));
         BookDetailsSet.add(new BookDetails("Important notice", 44));
+        BookDetailsSet.remove("Girls Talk");
 
-        BookDetailsSet.remove(45);
         assertEquals(1, BookDetailsSet.size());
         System.out.println(BookDetailsSet);
 
