@@ -22,6 +22,7 @@ public class BookDetails {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(ISBN);
     }
 
